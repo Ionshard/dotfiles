@@ -1,6 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 	name = Corey Ling
-	email = corey.ling@cenx.com
+	email = kasuko@ionshard.com
 [push]
 	default = simple
+[include]
+        path = ~/.gitconfig.local

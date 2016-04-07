@@ -83,5 +83,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/Users/kasuko/CENX/src/dev-env/bin:$PATH"
-alias psql="docker-compose -f "$(cat ~/.dev-env/source)/dev-env/projects/$(cat ~/.dev-env/project)/docker-compose.yml" run --rm postgresql psql --host $DOCKER_MACHINE_IP --user postgres"
-export PATH="/Users/kasuko/CENX/src/dev-env/bin:$PATH"
+
+#Source local file
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi

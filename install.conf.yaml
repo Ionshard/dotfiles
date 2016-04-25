@@ -6,6 +6,7 @@
         path: ssh/config
         create: true
     ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
     ~/.spacemacs: spacemacs
     ~/.lein/profiles.clj:
         path: lein/profiles.clj

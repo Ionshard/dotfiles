@@ -258,7 +258,9 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (spacemacs/toggle-evil-cleverparens-on)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (setq-default evil-escape-key-sequence "jf")
+  (setq-default helm-ag-ignore-patterns '("./resources/public/js/out/*"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

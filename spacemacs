@@ -32,7 +32,7 @@ values."
      git
      version-control
      markdown
-     ;; org
+     org
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh"

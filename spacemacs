@@ -40,8 +40,7 @@ values."
             shell-default-position 'bottom)
      ;;Languages
      evil-cleverparens
-     (clojure :variables
-              clojure-enable-fancify-symbols t)
+     clojure
      yaml
      html
      javascript

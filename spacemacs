@@ -46,7 +46,7 @@ values."
      html
      javascript
      sql
-     dockerfile
+     docker
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -257,7 +257,17 @@ layers configuration. You are free to put any user code."
   (spacemacs/toggle-evil-cleverparens-on)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (setq-default evil-escape-key-sequence "jf")
-  (setq-default helm-ag-ignore-patterns '("./resources/public/js/out/*"))
+  (setq-default helm-ag-ignore-patterns '("./resources/public/js/out/*" "./resources/public/js/compiled/*"))
+
+  ;; CIDER Configuration
+  (setq nrepl-hide-special-buffers t
+        cider-repl-wrap-history t
+        cider-repl-history-size 1000
+        cider-repl-history-file "~/.cider-repl-history"
+        cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+  (evil-define-key '('normal 'insert) cider-repl-mode-map
+    (kbd "<up>") 'cider-repl-next-input
+    (kbd "<down>") 'cider-repl-previous-input)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -267,6 +277,13 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(color-theme-sanityinc-solarized-rgb-is-srgb (quote f))
+ '(custom-safe-themes
+   (quote
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
+ '(nrepl-message-colors
+   (quote
+    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

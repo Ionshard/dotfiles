@@ -259,14 +259,14 @@ layers configuration. You are free to put any user code."
   (setq-default helm-ag-ignore-patterns '("./resources/public/js/out/*" "./resources/public/js/compiled/*"))
 
   ;; CIDER Configuration
-  (setq nrepl-hide-special-buffers t
-        cider-repl-wrap-history t
-        cider-repl-history-size 1000
-        cider-repl-history-file "~/.cider-repl-history"
-        cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
-  (evil-define-key '('normal 'insert) cider-repl-mode-map
-    (kbd "<up>") 'cider-repl-next-input
-    (kbd "<down>") 'cider-repl-previous-input)
+  (with-eval-after-load 'cider
+    (setq nrepl-hide-special-buffers t
+          cider-repl-wrap-history t
+          cider-repl-history-size 1000
+          cider-repl-history-file "~/.cider-repl-history")
+    (evil-define-key '(normal insert) cider-repl-mode-map
+      (kbd "<up>") 'cider-repl-previous-input
+      (kbd "<down>") 'cider-repl-next-input))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

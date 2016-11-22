@@ -85,7 +85,11 @@ values."
    ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
    ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
    ;; unchanged. (default 'vim)
-   dotspacemacs-editing-style 'vim
+   ;; dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style '(hybrid :variables
+                                       hybrid-mode-enable-evilified-state t
+                                       hybrid-mode-enable-hjkl-bindings t
+                                       hybrid-mode-default-state 'normal)
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays

@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     csv
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -46,13 +47,12 @@ values."
      javascript
      sql
      docker
-     floobits
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(editorconfig)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -262,6 +262,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (setq-default evil-escape-key-sequence "jf")
   (setq-default helm-ag-ignore-patterns '("./resources/public/js/out/*" "./resources/public/js/compiled/*"))
+  (editorconfig-mode 1)
 
   ;; CIDER Configuration
   (with-eval-after-load 'cider
@@ -269,7 +270,7 @@ layers configuration. You are free to put any user code."
           cider-repl-wrap-history t
           cider-repl-history-size 1000
           cider-repl-history-file "~/.cider-repl-history")
-    (evil-define-key '(normal insert) cider-repl-mode-map
+    (evil-define-key '(normal insert hybrid) cider-repl-mode-map
       (kbd "<up>") 'cider-repl-previous-input
       (kbd "<down>") 'cider-repl-next-input))
   )

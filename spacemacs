@@ -266,8 +266,7 @@ layers configuration. You are free to put any user code."
 
   ;; CIDER Configuration
   (with-eval-after-load 'cider
-    (setq nrepl-hide-special-buffers t
-          cider-repl-wrap-history t
+    (setq cider-repl-wrap-history t
           cider-repl-history-size 1000
           cider-repl-history-file "~/.cider-repl-history")
     (evil-define-key '(normal insert hybrid) cider-repl-mode-map
@@ -289,6 +288,9 @@ layers configuration. You are free to put any user code."
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(package-selected-packages
+   (quote
+    (xterm-color ws-butler which-key web-mode web-beautify use-package toc-org tagedit sql-indent spacemacs-theme spaceline powerline smeargle shell-pop pug-mode persp-mode pcre2el paradox osx-dictionary orgit org org-projectile org-pomodoro alert org-plus-contrib org-download open-junk-file neotree move-text markdown-toc markdown-mode macrostep link-hint info+ indent-guide hungry-delete htmlize hide-comnt help-fns+ helm-projectile helm-flx helm-company helm-c-yasnippet helm-ag google-translate gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe eyebrowse expand-region exec-path-from-shell evil-surround evil-nerd-commenter evil-mc evil-matchit evil-magit evil-escape evil-anzu eshell-z dumb-jump dockerfile-mode docker company-statistics column-enforce-mode coffee-mode clj-refactor hydra inflections cider spinner clojure-mode bind-key auto-compile packed aggressive-indent ace-link auto-complete tern company iedit smartparens bind-map highlight request projectile helm helm-core yasnippet skewer-mode js2-mode simple-httpd magit magit-popup git-commit with-editor dash haml-mode zenburn-theme yaml-mode window-numbering volatile-highlights vi-tilde-fringe uuidgen tablist slim-mode seq scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters queue quelpa popwin popup pkg-info pcache pbcopy osx-trash org-present org-bullets mwim multi-term mmm-mode magit-gitflow lorem-ipsum log4e livid-mode linum-relative less-css-mode launchctl json-mode js2-refactor js-doc ido-vertical-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-mode-manager helm-make helm-gitignore helm-descbinds helm-css-scss golden-ratio gnuplot gntp gitconfig-mode git-gutter-fringe+ git-gutter gh-md flx-ido fill-column-indicator fancy-battery evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-ediff evil-cleverparens evil-args eshell-prompt-extras esh-help emmet-mode elisp-slime-nav edn editorconfig docker-tramp diminish diff-hl csv-mode company-web company-tern clojure-snippets clean-aindent-mode cider-eval-sexp-fu auto-yasnippet auto-highlight-symbol async anzu adaptive-wrap ace-window ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

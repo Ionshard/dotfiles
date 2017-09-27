@@ -3,6 +3,14 @@ Host github.com
     User git
     IdentityFile ~/.ssh/personal
 
+Host med20
+    HostName med20.cenx.localnet
+    User deployer
+
+Host med22
+    HostName med22.cenx.localnet
+    User deployer
+
 Host med27
     HostName med27.cenx.localnet
     User deployer
